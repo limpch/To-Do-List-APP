@@ -63,7 +63,6 @@
 		btnRemove.classList.add('btnRemove');
 		btnWrapper.classList.add('btnWrapper');
 		
-		
 		btnWrapper.append(editBlock.btnEdit);
 		btnWrapper.append(btnComplete);
 		btnWrapper.append(btnRemove);
@@ -84,7 +83,9 @@
 			editBlock.editForm.addEventListener('submit', event => {
 				btnWrapper.prepend(editBlock.btnEdit);
 				event.preventDefault();
-				liText.textContent = editBlock.editInput.value;
+				if(editBlock.editInput.value.trim()) {
+					liText.textContent = editBlock.editInput.value;
+				}
 				editBlock.editForm.remove();
 			})
 		})
