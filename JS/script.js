@@ -44,6 +44,7 @@
 		return {btnEdit, editForm, editInput}
 	}
 
+	
 	function createListItem(itemEvent) {
 		let isComplete = false;
 
