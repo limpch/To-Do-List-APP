@@ -1,0 +1,294 @@
+@charset "UTF-8";
+/*Обнуление*/
+@import url("https://fonts.googleapis.com/css?family=Play:regular,700");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body {
+  font-family: "Play";
+}
+
+._container {
+  width: 75%;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  font-size: 45px;
+  font-weight: 700;
+  text-align: center;
+  margin: 20px 0px;
+}
+
+.form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0px 0px 20px 0px;
+}
+
+.input {
+  width: 500px;
+  padding: 15px 30px;
+  background-color: #A8E6CF;
+}
+
+.btnNewItem {
+  padding: 15px 30px;
+  background-color: #DCEDC1;
+}
+
+.btnNewItem:active {
+  background-color: #9fdb3d;
+}
+
+.list {
+  padding: 30px;
+  background-color: #FFD3B6;
+  min-height: 700px;
+  border-radius: 15px;
+}
+
+.item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 20px;
+  background-color: #FFAAA5;
+  margin: 10px 0px;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.item.complete {
+  background-color: #d1ffc5;
+}
+
+.liText.complete {
+  text-decoration: line-through;
+}
+
+.btnWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btnComplete {
+  padding: 10px 15px;
+  background-color: #76ff76;
+  margin: 0px 5px;
+}
+
+.btnRemove {
+  padding: 10px 15px;
+  background-color: #ff5f5f;
+}
+
+.btnEdit {
+  height: 35px;
+  background-color: transparent;
+}
+
+.btnEditImg {
+  width: 35px;
+}
+
+.editForm {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 50%;
+}
+
+.editInput {
+  padding: 10px;
+  width: 100%;
+  background-color: #ff7b74;
+  border-radius: 5px;
+}
+
+@media (max-width: 425px) {
+  ._container {
+    width: 100%;
+    min-width: 320px;
+    padding: 0 0;
+  }
+  .form {
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+  }
+  .input {
+    width: 500px;
+    padding: 15px 30px;
+  }
+  .btnNewItem {
+    padding: 15px 10px;
+  }
+  .list {
+    padding: 10px;
+    border-radius: 0px;
+  }
+  .item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 10px 20px;
+    background-color: #FFAAA5;
+    margin: 10px 0px;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+  .btnWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .btnComplete {
+    font-size: 0;
+    padding: 10px 10px;
+  }
+  .btnRemove {
+    font-size: 0;
+    padding: 10px 10px;
+  }
+  .btnEdit {
+    height: 25px;
+  }
+  .btnEditImg {
+    width: 25px;
+  }
+  .editForm {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    width: 50%;
+  }
+  .editInput {
+    padding: 5px;
+    width: 100%;
+    background-color: #ff7b74;
+  }
+}

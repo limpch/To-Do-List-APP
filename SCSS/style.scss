@@ -1,0 +1,196 @@
+// ИМПОРТ ДРУГИХ СТИЛЕЙ
+@import "nullstyle.scss";
+
+//-----------------------
+
+// Шаблоны
+@import "patterns.scss";
+//-----------------------
+
+// Миксины
+@import "mixins.scss";
+
+//-----------------------
+
+// ШРИФТЫ
+@import "fonts.scss";
+@import url('https://fonts.googleapis.com/css?family=Play:regular,700');
+// Шрифт по умолчанию
+$fontFamilyAll: "Play";
+//----------------------
+
+// ПЕРЕМЕННЫЕ
+$containerWidthAll: 1440px;
+$bodyWidth: 1920px;
+$adaptiveWidth: $containerWidthAll / $bodyWidth;
+//----------------------
+//ГОТОВЫЙ НАСТРОЕННЫЙ КОД
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+body {
+	font-family: $fontFamilyAll;
+}
+._container {
+	width: $adaptiveWidth * 100%;
+	min-width: 320px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+//-------------------------------------
+
+
+.title {
+	font-size: 45px;
+	font-weight: 700;
+	text-align: center;
+	margin: 20px 0px;
+}
+.form {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0px 0px 20px 0px;
+}
+.input {
+	width: 500px;
+	padding: 15px 30px;
+	background-color: #A8E6CF;
+}
+.btnNewItem {
+	padding: 15px 30px;
+	background-color: #DCEDC1;
+	&:active {
+		background-color: #9fdb3d;
+	}
+}
+.list {
+	padding: 30px;
+	background-color: #FFD3B6;
+	min-height: 700px;
+	border-radius: 15px;
+}
+.item {
+	display: flex;
+	position: relative;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+	background-color: #FFAAA5;
+	margin: 10px 0px;
+	border-radius: 5px;
+	transition: all 0.3s ease 0s;
+}
+.item.complete {
+	background-color: #d1ffc5;
+}
+.liText.complete {
+	text-decoration: line-through;
+}
+.btnWrapper {
+	display: flex;
+	align-items: center;
+}
+
+.btnComplete {
+	padding: 10px 15px;
+	background-color: rgb(118, 255, 118);
+	margin: 0px 5px;
+}
+
+.btnRemove {
+	padding: 10px 15px;
+	background-color: rgb(255, 95, 95);
+}
+
+.btnEdit {
+	height: 35px;
+	background-color: transparent;
+}
+.btnEditImg {
+	width: 35px;
+}
+
+.editForm {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	width: 50%;
+}
+.editInput {
+	padding: 10px;
+	width: 100%;
+	background-color: #ff7b74;
+	border-radius: 5px;
+}
+
+@media (max-width: 425px) {
+	._container {
+		width: 100%;
+		min-width: 320px;
+		padding: 0 0;
+	}
+	.form {
+		width: 100%;
+		margin: 0px 0px 0px 0px;
+	}
+	.input {
+		width: 500px;
+		padding: 15px 30px;
+	}
+	.btnNewItem {
+		padding: 15px 10px;
+		
+	}
+	.list {
+		padding: 10px;
+		border-radius: 0px;
+	}
+	.item {
+		display: flex;
+		position: relative;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px 20px;
+		background-color: #FFAAA5;
+		margin: 10px 0px;
+		border-radius: 5px;
+		transition: all 0.3s ease 0s;
+	}
+	.btnWrapper {
+		display: flex;
+		align-items: center;
+	}
+	.btnComplete {
+		font-size: 0;
+		padding: 10px 10px;
+	}
+	.btnRemove {
+		font-size: 0;
+		padding: 10px 10px;
+	}
+	.btnEdit {
+		height: 25px;
+	}
+	.btnEditImg {
+		width: 25px;
+	}
+	.editForm {
+		position: absolute;
+		left: 10px;
+		top: 8px;
+		width: 50%;
+	}
+	.editInput {
+		padding: 5px;
+		width: 100%;
+		background-color: #ff7b74;
+	}
+}
