@@ -1,6 +1,5 @@
 (() => {
 
-	//Создание тайтла сайта 
 	function createTitleOfToDoList (title) {
 		const titleH1 = document.createElement('h2');
 		titleH1.textContent = title;
