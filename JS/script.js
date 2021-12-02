@@ -33,7 +33,7 @@
 		const btnEditImg = document.createElement('img');
 		const editForm = document.createElement('form');
 		const editInput = document.createElement('input');
-		btnEditImg.src = "../IMG/edit.png";
+		btnEditImg.src = "IMG/edit.png";
 		btnEditImg.alt = "Редартировать";
 		btnEdit.classList.add('btnEdit');
 		editForm.classList.add('editForm');
@@ -97,8 +97,6 @@
 		
 		return {liItem, btnComplete, btnRemove};
 	}
-
-	
 
 	document.addEventListener('DOMContentLoaded', () => {	
 		const App = document.getElementById('app');
