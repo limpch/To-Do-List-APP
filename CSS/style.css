@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*Обнуление*/
-@import url("https://fonts.googleapis.com/css?family=Play:regular,700");
+@import url("https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700");
 * {
   padding: 0;
   margin: 0;
@@ -77,7 +77,6 @@ h1, h2, h3, h4, h5, h6 {
 .wrapper {
   width: 100%;
   min-height: 100%;
-  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -88,25 +87,319 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  font-family: "Play";
+  font-family: "Oswald";
+  list-style: none;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(35.94%, #e7f0ff), color-stop(65.62%, #dae9ff), to(#ffffff));
+  background: linear-gradient(180deg, #ffffff 0%, #e7f0ff 35.94%, #dae9ff 65.62%, #ffffff 100%);
 }
 
 ._container {
-  width: 75%;
+  width: 97.91667%;
   min-width: 320px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.title {
-  font-size: 45px;
-  font-weight: 700;
-  text-align: center;
-  margin: 20px 0px;
+.main-header-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0px 0px 30px 0px;
+  padding: 0px 20px;
 }
 
-.form {
-  width: 100%;
+.main-header-title {
+  font-weight: 300;
+  font-size: 80px;
+  line-height: 90px;
+  color: #919191;
+}
+
+.main-header-btn {
+  background: transparent;
+  color: #000;
+  font-size: 120px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+@media (max-width: 560px) {
+  .main-header-title {
+    font-size: 40px;
+  }
+  .main-header-btn {
+    font-size: 80px;
+  }
+}
+
+.pick-color {
+  -webkit-transition: all 0.6s ease 0s;
+  transition: all 0.6s ease 0s;
+}
+
+.pick-color .pickColor-list {
+  font-size: 60px;
+  -webkit-transition: all 0.6s ease 0s;
+  transition: all 0.6s ease 0s;
+}
+
+.pick-color .red::before,
+.pick-color .yellow::before,
+.pick-color .green::before,
+.pick-color .blue::before,
+.pick-color .purple::before {
+  content: "";
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  border-radius: 50%;
+  left: -80px;
+  top: 50%;
+  margin: -25px 0px 0px 0px;
+  -webkit-transition: all 0.6s ease 0s;
+  transition: all 0.6s ease 0s;
+}
+
+.hide-cmplt-elements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px 0px 40px 0px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hide-cmplt-elements-checkbox {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border: 5px solid #b5b8b1;
+  -webkit-transition: all 0.6s ease 0s;
+  transition: all 0.6s ease 0s;
+  margin: 0px 40px 0px 0px;
+}
+
+.hide-cmplt-elements-checkbox.hide {
+  background-color: #9d9d9d;
+}
+
+.hide-cmplt-elements-text {
+  font-size: 60px;
+  line-height: 120%;
+  color: #b5b8b1;
+  -webkit-transition: all 0.6s ease 0s;
+  transition: all 0.6s ease 0s;
+}
+
+@media (max-width: 540px) {
+  .hide-cmplt-elements-text {
+    font-size: 16px;
+  }
+  .hide-cmplt-elements-checkbox {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: 2px solid #b5b8b1;
+    -webkit-transition: all 0.6s ease 0s;
+    transition: all 0.6s ease 0s;
+    margin: 0px 40px 0px 0px;
+  }
+}
+
+.pick-color.isHidden .pickColor-list {
+  font-size: 0px;
+}
+
+.pick-color.isHidden .red::before,
+.pick-color.isHidden .yellow::before,
+.pick-color.isHidden .green::before,
+.pick-color.isHidden .blue::before,
+.pick-color.isHidden .purple::before {
+  width: 0px;
+  height: 0px;
+}
+
+.pickColor-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-weight: 300;
+  font-size: 60px;
+  line-height: 90px;
+  color: #737171;
+}
+
+.circleItem {
+  cursor: pointer;
+  margin: 0px 40px;
+}
+
+.red,
+.yellow,
+.green,
+.blue,
+.purple {
+  position: relative;
+}
+
+.red::before {
+  background: #ffb6b9;
+}
+
+.yellow::before {
+  background: #ffe27c;
+}
+
+.green::before {
+  background: #a8e6cf;
+}
+
+.blue::before {
+  background: #a6e3e9;
+}
+
+.purple::before {
+  background: #d2c3f2;
+}
+
+.todos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.full-list-block {
+  position: relative;
+  max-width: 540px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 33%;
+          flex: 1 1 33%;
+  margin: 0px 0px 60px 0px;
+}
+
+.header-block {
+  width: 540px;
+  height: 68px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header-title {
+  width: 480px;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+}
+
+.delete-list {
+  cursor: pointer;
+  padding: 10px 0px 0px 0px;
+}
+
+.list-wrapper {
+  width: 540px;
+  background-color: #fff;
+  min-height: 150px;
+  border-radius: 0px 0px 90px 90px;
+  padding: 25px 45px 60px 25px;
+}
+
+.item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0px 0px 5px 0px;
+}
+
+.item.completeFullItem.hide {
+  display: none;
+}
+
+.left-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkbox {
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  border: 3px solid #b5b8b1;
+  margin: 0px 16px 0px 0px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.checkbox.complete {
+  background-color: #9d9d9d;
+}
+
+.item-text {
+  background-color: #fff;
+  font-size: 30px;
+  color: #a6e3e9;
+  position: relative;
+}
+
+.item-text.complete {
+  -webkit-text-decoration: line-through #b5b8b1;
+          text-decoration: line-through #b5b8b1;
+}
+
+.remove-btn {
+  background-color: transparent;
+}
+
+.add-btn {
+  border-radius: 40px;
+  font-size: 35px;
+  line-height: 52px;
+  color: #fff;
+  width: 180px;
+  height: 46px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -116,179 +409,50 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0px 0px 20px 0px;
-}
-
-.input {
-  width: 500px;
-  padding: 15px 30px;
-  background-color: #A8E6CF;
-}
-
-.btnNewItem {
-  padding: 15px 30px;
-  background-color: #DCEDC1;
-}
-
-.btnNewItem:active {
-  background-color: #9fdb3d;
-}
-
-.list {
-  padding: 30px;
-  background-color: #FFD3B6;
-  min-height: 700px;
-  border-radius: 15px;
-}
-
-.item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 10px 20px;
-  background-color: #FFAAA5;
-  margin: 10px 0px;
-  border-radius: 5px;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-.item.complete {
-  background-color: #d1ffc5;
-}
-
-.liText.complete {
-  text-decoration: line-through;
-}
-
-.btnWrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.btnComplete {
-  padding: 10px 15px;
-  background-color: #76ff76;
-  margin: 0px 5px;
-}
-
-.btnRemove {
-  padding: 10px 15px;
-  background-color: #ff5f5f;
-}
-
-.btnEdit {
-  height: 35px;
-  background-color: transparent;
-}
-
-.btnEditImg {
-  width: 35px;
-}
-
-.editForm {
+  padding: 0px 0px 5px 0px;
   position: absolute;
-  left: 10px;
-  top: 10px;
-  width: 50%;
+  bottom: -23px;
+  left: 50%;
+  margin: 0px 0px 0px -90px;
 }
 
-.editInput {
-  padding: 10px;
-  width: 100%;
-  background-color: #ff7b74;
-  border-radius: 5px;
+/*ЦВЕТА*/
+.blue-htb-bg {
+  background: #a6e3e9;
 }
 
-@media (max-width: 425px) {
-  ._container {
-    width: 100%;
-    min-width: 320px;
-    padding: 0 0;
-  }
-  .form {
-    width: 100%;
-    margin: 0px 0px 0px 0px;
-  }
-  .input {
-    width: 500px;
-    padding: 15px 30px;
-  }
-  .btnNewItem {
-    padding: 15px 10px;
-  }
-  .list {
-    padding: 10px;
-    border-radius: 0px;
-  }
-  .item {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 10px 20px;
-    background-color: #FFAAA5;
-    margin: 10px 0px;
-    border-radius: 5px;
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-  }
-  .btnWrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .btnComplete {
-    font-size: 0;
-    padding: 10px 10px;
-  }
-  .btnRemove {
-    font-size: 0;
-    padding: 10px 10px;
-  }
-  .btnEdit {
-    height: 25px;
-  }
-  .btnEditImg {
-    width: 25px;
-  }
-  .editForm {
-    position: absolute;
-    left: 10px;
-    top: 8px;
-    width: 50%;
-  }
-  .editInput {
-    padding: 5px;
-    width: 100%;
-    background-color: #ff7b74;
-  }
+.blue-text-color-bg {
+  color: #a6e3e9;
+}
+
+.green-htb-bg {
+  background: #a8e6cf;
+}
+
+.green-text-color-bg {
+  color: #a8e6cf;
+}
+
+.yellow-htb-bg {
+  background: #ffe27c;
+}
+
+.yellow-text-color-bg {
+  color: #ffe27c;
+}
+
+.red-htb-bg {
+  background: #ffb6b9;
+}
+
+.red-text-color-bg {
+  color: #ffb6b9;
+}
+
+.purple-htb-bg {
+  background: #d2c3f2;
+}
+
+.purple-text-color-bg {
+  color: #d2c3f2;
 }

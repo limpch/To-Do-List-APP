@@ -14,13 +14,13 @@
 
 // ШРИФТЫ
 @import "fonts.scss";
-@import url('https://fonts.googleapis.com/css?family=Play:regular,700');
+@import url("https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700");
 // Шрифт по умолчанию
-$fontFamilyAll: "Play";
+$fontFamilyAll: "Oswald";
 //----------------------
 
 // ПЕРЕМЕННЫЕ
-$containerWidthAll: 1440px;
+$containerWidthAll: 1880px;
 $bodyWidth: 1920px;
 $adaptiveWidth: $containerWidthAll / $bodyWidth;
 //----------------------
@@ -28,12 +28,13 @@ $adaptiveWidth: $containerWidthAll / $bodyWidth;
 .wrapper {
 	width: 100%;
 	min-height: 100%;
-	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 }
 body {
 	font-family: $fontFamilyAll;
+	list-style: none;
+	background: linear-gradient(180deg, #ffffff 0%, #e7f0ff 35.94%, #dae9ff 65.62%, #ffffff 100%);
 }
 ._container {
 	width: $adaptiveWidth * 100%;
@@ -43,154 +44,280 @@ body {
 }
 //-------------------------------------
 
-
-.title {
-	font-size: 45px;
-	font-weight: 700;
-	text-align: center;
-	margin: 20px 0px;
-}
-.form {
-	width: 100%;
+.main-header-div {
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	margin: 0px 0px 20px 0px;
+	justify-content: space-between;
+	margin: 0px 0px 30px 0px;
+	padding: 0px 20px;
 }
-.input {
-	width: 500px;
-	padding: 15px 30px;
-	background-color: #A8E6CF;
+.main-header-title {
+	font-weight: 300;
+	font-size: 80px;
+	line-height: 90px;
+	color: #919191;
 }
-.btnNewItem {
-	padding: 15px 30px;
-	background-color: #DCEDC1;
-	&:active {
-		background-color: #9fdb3d;
+
+.main-header-btn {
+	background: transparent;
+	color: #000;
+	font-size: 120px;
+	font-weight: 300;
+	cursor: pointer;
+}
+@media (max-width: 560px) {
+	.main-header-title {
+		font-size: 40px;
+	}
+	.main-header-btn {
+		font-size: 80px;
 	}
 }
+.pick-color {
+	transition: all 0.6s ease 0s;
+	.pickColor-list {
+		font-size: 60px;
+		transition: all 0.6s ease 0s;
+	}
+	.red::before,
+	.yellow::before,
+	.green::before,
+	.blue::before,
+	.purple::before {
+		content: "";
+		width: 60px;
+		height: 60px;
+		position: absolute;
+		border-radius: 50%;
+		left: -80px;
+		top: 50%;
+		margin: -25px 0px 0px 0px;
+		transition: all 0.6s ease 0s;
+	}
+}
+.hide-cmplt-elements {
+	display: flex;
+	align-items: center;
+	margin: 20px 0px 40px 0px;
+	justify-content: center;
+}
+.hide-cmplt-elements-checkbox {
+	cursor: pointer;
+	width: 60px;
+	height: 60px;
+	background-color: #fff;
+	border: 5px solid #b5b8b1;
+	transition: all 0.6s ease 0s;
+	margin: 0px 40px 0px 0px;
+}
+.hide-cmplt-elements-checkbox.hide {
+	background-color: #9d9d9d;
+}
+.hide-cmplt-elements-text {
+	font-size: 60px;
+	line-height: 120%;
+	color: #b5b8b1;
+	transition: all 0.6s ease 0s;
+}
+@media (max-width: 540px) {
+	.hide-cmplt-elements-text {
+		font-size: 16px;
+	}
+	.hide-cmplt-elements-checkbox {
+		cursor: pointer;
+		width: 30px;
+		height: 30px;
+		background-color: #fff;
+		border: 2px solid #b5b8b1;
+		transition: all 0.6s ease 0s;
+		margin: 0px 40px 0px 0px;
+	}
+}
+.pick-color.isHidden {
+	.pickColor-list {
+		font-size: 0px;
+	}
+	.red::before,
+	.yellow::before,
+	.green::before,
+	.blue::before,
+	.purple::before {
+		width: 0px;
+		height: 0px;
+	}
+}
+.pickColor-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	font-weight: 300;
+	font-size: 60px;
+	line-height: 90px;
+	color: #737171;
+}
+
+.circleItem {
+	cursor: pointer;
+	margin: 0px 40px;
+}
+
+.red,
+.yellow,
+.green,
+.blue,
+.purple {
+	position: relative;
+}
+
+.red::before {
+	background: #ffb6b9;
+}
+.yellow::before {
+	background: #ffe27c;
+}
+.green::before {
+	background: #a8e6cf;
+}
+.blue::before {
+	background: #a6e3e9;
+}
+.purple::before {
+	background: #d2c3f2;
+}
+
+.todos {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+.full-list-block {
+	position: relative;
+	max-width: 540px;
+	flex: 1 1 33%;
+	margin: 0px 0px 60px 0px;
+}
+
+.header-block {
+	width: 540px;
+	height: 68px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.header-title {
+	width: 480px;
+	text-align: center;
+	color: white;
+	font-size: 40px;
+}
+.delete-list {
+	cursor: pointer;
+	padding: 10px 0px 0px 0px;
+}
+.list-wrapper {
+	width: 540px;
+	background-color: #fff;
+	min-height: 150px;
+	border-radius: 0px 0px 90px 90px;
+	padding: 25px 45px 60px 25px;
+}
 .list {
-	padding: 30px;
-	background-color: #FFD3B6;
-	min-height: 700px;
-	border-radius: 15px;
 }
 .item {
 	display: flex;
-	position: relative;
-	flex-direction: row-reverse;
 	justify-content: space-between;
 	align-items: center;
-	padding: 10px 20px;
-	background-color: #FFAAA5;
-	margin: 10px 0px;
-	border-radius: 5px;
-	transition: all 0.3s ease 0s;
+	margin: 0px 0px 5px 0px;
 }
-.item.complete {
-	background-color: #d1ffc5;
+.item.completeFullItem.hide {
+	display: none;
 }
-.liText.complete {
-	text-decoration: line-through;
-}
-.btnWrapper {
+
+.left-block {
 	display: flex;
 	align-items: center;
 }
-
-.btnComplete {
-	padding: 10px 15px;
-	background-color: rgb(118, 255, 118);
-	margin: 0px 5px;
+.checkbox {
+	width: 22px;
+	height: 22px;
+	background-color: #fff;
+	border: 3px solid #b5b8b1;
+	margin: 0px 16px 0px 0px;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+}
+.checkbox.complete {
+	background-color: #9d9d9d;
+}
+.item-text {
+	background-color: #fff;
+	font-size: 30px;
+	color: #a6e3e9;
+	position: relative;
+}
+.item-text.complete {
+	text-decoration: line-through #b5b8b1;
 }
 
-.btnRemove {
-	padding: 10px 15px;
-	background-color: rgb(255, 95, 95);
-}
-
-.btnEdit {
-	height: 35px;
+.remove-btn {
 	background-color: transparent;
 }
-.btnEditImg {
-	width: 35px;
+
+.remove-btn-img {
 }
 
-.editForm {
+.add-btn {
+	border-radius: 40px;
+	font-size: 35px;
+	line-height: 52px;
+	color: #fff;
+	width: 180px;
+	height: 46px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 0px 5px 0px;
 	position: absolute;
-	left: 10px;
-	top: 10px;
-	width: 50%;
-}
-.editInput {
-	padding: 10px;
-	width: 100%;
-	background-color: #ff7b74;
-	border-radius: 5px;
+	bottom: -23px;
+	left: 50%;
+	margin: 0px 0px 0px -90px;
 }
 
-@media (max-width: 425px) {
-	._container {
-		width: 100%;
-		min-width: 320px;
-		padding: 0 0;
-	}
-	.form {
-		width: 100%;
-		margin: 0px 0px 0px 0px;
-	}
-	.input {
-		width: 500px;
-		padding: 15px 30px;
-	}
-	.btnNewItem {
-		padding: 15px 10px;
-		
-	}
-	.list {
-		padding: 10px;
-		border-radius: 0px;
-	}
-	.item {
-		display: flex;
-		position: relative;
-		flex-direction: row-reverse;
-		justify-content: space-between;
-		align-items: center;
-		padding: 10px 20px;
-		background-color: #FFAAA5;
-		margin: 10px 0px;
-		border-radius: 5px;
-		transition: all 0.3s ease 0s;
-	}
-	.btnWrapper {
-		display: flex;
-		align-items: center;
-	}
-	.btnComplete {
-		font-size: 0;
-		padding: 10px 10px;
-	}
-	.btnRemove {
-		font-size: 0;
-		padding: 10px 10px;
-	}
-	.btnEdit {
-		height: 25px;
-	}
-	.btnEditImg {
-		width: 25px;
-	}
-	.editForm {
-		position: absolute;
-		left: 10px;
-		top: 8px;
-		width: 50%;
-	}
-	.editInput {
-		padding: 5px;
-		width: 100%;
-		background-color: #ff7b74;
-	}
+//-------------------------------------
+/*ЦВЕТА*/
+.blue-htb-bg {
+	background: #a6e3e9;
 }
+.blue-text-color-bg {
+	color: #a6e3e9;
+}
+//-------------------------------------
+.green-htb-bg {
+	background: #a8e6cf;
+}
+.green-text-color-bg {
+	color: #a8e6cf;
+}
+//-------------------------------------
+.yellow-htb-bg {
+	background: #ffe27c;
+}
+.yellow-text-color-bg {
+	color: #ffe27c;
+}
+//-------------------------------------
+.red-htb-bg {
+	background: #ffb6b9;
+}
+.red-text-color-bg {
+	color: #ffb6b9;
+}
+//-------------------------------------
+.purple-htb-bg {
+	background: #d2c3f2;
+}
+.purple-text-color-bg {
+	color: #d2c3f2;
+}
+//-------------------------------------
