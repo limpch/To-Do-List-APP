@@ -1,6 +1,5 @@
 (() => {
 	let colorIs;
-
 	function createHeaderOfToDoList (titleText, fullList) {
 		const headerBlock = document.createElement('div');
 		const headerTitle = document.createElement('input');
@@ -61,8 +60,9 @@
 		removeBtnImg.classList.add('remove-btn-img');
 		leftBlock.classList.add('left-block');
 		itemText.classList.add('item-text');
+		itemText.classList.add(`${colorIs}-text-color-bg`);
 
-		itemText.value = "Новая заметка";
+		itemText.value = "новая заметка...";
 		removeBtnImg.src = "IMG/ICONS/remove.png";
 		removeBtnImg.alt = "Удалить";
 
@@ -94,7 +94,7 @@
 		const todosBlock = document.getElementById('todos');
 		const listElement = createToDoList();
 		const fullListBlock = document.createElement('div');
-		const headerElement = createHeaderOfToDoList('Список дел', fullListBlock);
+		const headerElement = createHeaderOfToDoList('Название..', fullListBlock);
 
 		fullListBlock.classList.add('full-list-block');
 
@@ -173,7 +173,6 @@
 
 		return {mainHeaderDiv, mainHeaderBtn}
 	}
-	
 	document.addEventListener('DOMContentLoaded', () => {
 		const todosCreateList = document.getElementById('todos-create-list');
 		const mainHeaderElement = createMainHeader();
