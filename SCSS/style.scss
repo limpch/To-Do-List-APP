@@ -75,9 +75,23 @@ body {
 }
 .pick-color {
 	transition: all 0.6s ease 0s;
-	.pickColor-list {
+	height: auto;
+	.circleItem {
+		cursor: pointer;
+		margin: 0px 40px;
+		font-weight: 300;
 		font-size: 60px;
-		transition: all 0.6s ease 0s;
+		line-height: 90px;
+		color: #737171;
+		transition: all 0.3s ease 0s;
+	}
+	@media (max-width: 768px) {
+		.circleItem {
+			flex: 1 1 100%;
+			line-height: 60px;
+			font-size: 30px;
+			text-align: center;
+		}
 	}
 	.red::before,
 	.yellow::before,
@@ -93,6 +107,20 @@ body {
 		top: 50%;
 		margin: -25px 0px 0px 0px;
 		transition: all 0.6s ease 0s;
+	}
+}
+@media (max-width: 768px) {
+	.pick-color {
+		.red::before,
+		.yellow::before,
+		.green::before,
+		.blue::before,
+		.purple::before {
+			width: 30px;
+			height: 30px;
+			left: -40px;
+			margin: -15px 0px 0px 0px;
+		}
 	}
 }
 .hide-cmplt-elements {
@@ -121,20 +149,18 @@ body {
 }
 @media (max-width: 540px) {
 	.hide-cmplt-elements-text {
-		font-size: 16px;
+		font-size: 20px;
 	}
 	.hide-cmplt-elements-checkbox {
-		cursor: pointer;
 		width: 30px;
 		height: 30px;
-		background-color: #fff;
 		border: 2px solid #b5b8b1;
-		transition: all 0.6s ease 0s;
-		margin: 0px 40px 0px 0px;
+		margin: 0px 20px 0px 0px;
 	}
 }
 .pick-color.isHidden {
-	.pickColor-list {
+	height: 0px;
+	.circleItem {
 		font-size: 0px;
 	}
 	.red::before,
@@ -150,16 +176,10 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
-	font-weight: 300;
-	font-size: 60px;
-	line-height: 90px;
-	color: #737171;
+	align-items: center;
 }
 
-.circleItem {
-	cursor: pointer;
-	margin: 0px 40px;
-}
+
 
 .red,
 .yellow,
@@ -191,6 +211,8 @@ body {
 	align-items: flex-start;
 	flex-wrap: wrap;
 }
+
+
 .full-list-block {
 	position: relative;
 	max-width: 540px;
@@ -206,7 +228,7 @@ body {
 	justify-content: center;
 }
 .header-title {
-	width: 480px;
+	width: 80%;
 	text-align: center;
 	color: white;
 	font-size: 40px;
@@ -222,8 +244,7 @@ body {
 	border-radius: 0px 0px 90px 90px;
 	padding: 25px 45px 60px 25px;
 }
-.list {
-}
+
 .item {
 	display: flex;
 	justify-content: space-between;
@@ -253,8 +274,27 @@ body {
 .item-text {
 	background-color: #fff;
 	font-size: 30px;
+	line-height: 45px;
 	color: #a6e3e9;
 	position: relative;
+}
+@media (max-width: 540px) {
+	.full-list-block {
+		max-width: 320px;
+		flex: 1 1 100%;
+	}
+	.header-block {
+		width: 320px;
+	}
+	.list-wrapper {
+		width: 320px;
+	}
+	.item-text {
+		font-size: 24px;
+		line-height: 30px;
+		width: 75%;
+	}
+	
 }
 .item-text.complete {
 	text-decoration: line-through #b5b8b1;

@@ -44,7 +44,7 @@
 		});
 		return checkbox;
 	}
-	function createListItem() {
+	function createListItem(color) {
 		const item = document.createElement('li');
 		const rightBlock = document.createElement('div');
 		const removeBtn = document.createElement('button');
@@ -60,7 +60,7 @@
 		removeBtnImg.classList.add('remove-btn-img');
 		leftBlock.classList.add('left-block');
 		itemText.classList.add('item-text');
-		itemText.classList.add(`${colorIs}-text-color-bg`);
+		itemText.classList.add(`${color}-text-color-bg`);
 
 		itemText.value = "новая заметка...";
 		removeBtnImg.src = "IMG/ICONS/remove.png";
@@ -83,9 +83,10 @@
 		let addBtn = document.createElement('button');
 		addBtn.classList.add('add-btn');
 		addBtn.classList.add(`${colorIs + "-htb-bg"}`);
+		addBtn.dataset.color = colorIs;
 		addBtn.innerHTML = "+Добавить";
 		addBtn.addEventListener('click', () => {
-			listElement.listWrapper.append(createListItem());
+			listElement.listWrapper.append(createListItem(addBtn.dataset.color));
 		});
 		return addBtn;
 	}
@@ -94,13 +95,13 @@
 		const todosBlock = document.getElementById('todos');
 		const listElement = createToDoList();
 		const fullListBlock = document.createElement('div');
-		const headerElement = createHeaderOfToDoList('Название..', fullListBlock);
+		const headerElement = createHeaderOfToDoList('Название...', fullListBlock);
 
 		fullListBlock.classList.add('full-list-block');
 
 		fullListBlock.append(headerElement);
 		fullListBlock.append(listElement.listWrapper);
-		listElement.listWrapper.append(createListItem());
+		listElement.listWrapper.append(createListItem(color));
 		fullListBlock.append(creacteAddBtn(listElement));
 		todosBlock.append(fullListBlock);
 	}
@@ -134,7 +135,7 @@
 		hideCmpltElementsCheckbox.classList.add('hide-cmplt-elements-checkbox');
 		hideCmpltElementsText.classList.add('hide-cmplt-elements-text');
 
-		hideCmpltElementsText.innerHTML = "спрятать выполненные дела";
+		hideCmpltElementsText.innerHTML = "Спрятать выполненные дела";
 
 		hideCmpltElements.append(hideCmpltElementsCheckbox);
 		hideCmpltElements.append(hideCmpltElementsText);
