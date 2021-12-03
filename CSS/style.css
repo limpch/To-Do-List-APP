@@ -146,6 +146,7 @@ body {
 
 .pick-color .circleItem {
   cursor: pointer;
+  height: auto;
   margin: 0px 40px;
   font-weight: 300;
   font-size: 60px;
@@ -249,6 +250,7 @@ body {
 }
 
 .pick-color.isHidden .circleItem {
+  height: 0px;
   font-size: 0px;
 }
 
