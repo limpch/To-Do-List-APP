@@ -1,5 +1,7 @@
 (() => {
 	let colorIs;
+	let isHide = false;
+
 	function createHeaderOfToDoList (titleText, fullList) {
 		const headerBlock = document.createElement('div');
 		const headerTitle = document.createElement('input');
@@ -41,6 +43,8 @@
 			checkbox.classList.toggle('complete');
 			itemText.classList.toggle('complete');
 			FullItem.classList.toggle('completeFullItem');
+			if(isHide)
+				document.querySelectorAll('.completeFullItem').forEach(item => {item.classList.add('hide')});
 		});
 		return checkbox;
 	}
@@ -76,7 +80,8 @@
 		leftBlock.append(itemText);
 		item.append(leftBlock);
 		item.append(rightBlock);
-
+		localStorage.setItem('data', DATA);
+		console.log(localStorage.getItem('data'));
 		return item;
 	}
 	function creacteAddBtn (listElement) {
@@ -135,7 +140,7 @@
 		hideCmpltElementsCheckbox.classList.add('hide-cmplt-elements-checkbox');
 		hideCmpltElementsText.classList.add('hide-cmplt-elements-text');
 
-		hideCmpltElementsText.innerHTML = "Спрятать выполненные дела";
+		hideCmpltElementsText.innerHTML = "спрятать выполненные дела";
 
 		hideCmpltElements.append(hideCmpltElementsCheckbox);
 		hideCmpltElements.append(hideCmpltElementsText);
@@ -147,6 +152,7 @@
 		pickColor.append(pickColorList);
 
 		hideCmpltElementsCheckbox.addEventListener('click', () => {
+			isHide = !isHide;
 			hideCmpltElementsCheckbox.classList.toggle('hide');
 			document.querySelectorAll('.completeFullItem').forEach(item => {item.classList.toggle('hide')});
 		});
@@ -181,7 +187,6 @@
 		todosCreateList.append(mainHeaderElement.mainHeaderDiv);
 		todosCreateList.append(bottomMainHeaderElement.pickColor);
 		todosCreateList.append(bottomMainHeaderElement.hideCmpltElements);
-
 		mainHeaderElement.mainHeaderBtn.addEventListener('click', () => {
 			bottomMainHeaderElement.pickColor.classList.toggle('isHidden');
 		});
