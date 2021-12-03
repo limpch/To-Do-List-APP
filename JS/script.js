@@ -80,8 +80,6 @@
 		leftBlock.append(itemText);
 		item.append(leftBlock);
 		item.append(rightBlock);
-		localStorage.setItem('data', DATA);
-		console.log(localStorage.getItem('data'));
 		return item;
 	}
 	function creacteAddBtn (listElement) {
