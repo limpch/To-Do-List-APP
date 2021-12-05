@@ -12,7 +12,7 @@
 		headerTitle.classList.add(`${colorIs + "-htb-bg"}`);
 		deleteList.classList.add('delete-list');
 
-		headerTitle.value = titleText;
+		headerTitle.placeholder = titleText;
 		deleteList.alt = "Закрыть";
 		deleteList.src = "IMG/ICONS/deleteList.png"
 		headerTitle.setAttribute('maxlength', '25');
@@ -66,7 +66,7 @@
 		itemText.classList.add('item-text');
 		itemText.classList.add(`${color}-text-color-bg`);
 
-		itemText.value = "новая заметка...";
+		itemText.placeholder = "новая заметка...";
 		removeBtnImg.src = "IMG/ICONS/remove.png";
 		removeBtnImg.alt = "Удалить";
 
