@@ -115,7 +115,6 @@
 		pickColorList.innerHTML = `${text}`;
 		pickColorList.addEventListener('click', () => {
 			createTable(colorClass);
-			pickColor.classList.add('isHidden');
 		});
 		return pickColorList;
 	}
@@ -132,7 +131,7 @@
 		const pickColorItemPurple = createPickColorItem('purple','развлечения', pickColor);
 		
 		pickColor.classList.add('pick-color');
-		pickColor.classList.add('isHidden');
+		pickColor.classList.add('animate__animated');
 		pickColorList.classList.add('pickColor-list');
 		hideCmpltElements.classList.add('hide-cmplt-elements');
 		hideCmpltElementsCheckbox.classList.add('hide-cmplt-elements-checkbox');
@@ -185,8 +184,20 @@
 		todosCreateList.append(mainHeaderElement.mainHeaderDiv);
 		todosCreateList.append(bottomMainHeaderElement.pickColor);
 		todosCreateList.append(bottomMainHeaderElement.hideCmpltElements);
+		bottomMainHeaderElement.pickColor.style.display = "none";
 		mainHeaderElement.mainHeaderBtn.addEventListener('click', () => {
-			bottomMainHeaderElement.pickColor.classList.toggle('isHidden');
+			if (bottomMainHeaderElement.pickColor.classList.contains('animate__zoomIn')) {
+				bottomMainHeaderElement.pickColor.classList.remove('animate__zoomIn');
+				bottomMainHeaderElement.pickColor.classList.add('animate__zoomOut');
+				setTimeout(() => {
+					bottomMainHeaderElement.pickColor.style.display = "none";
+				}, 600);
+			}
+			else {
+				bottomMainHeaderElement.pickColor.style.display = "block";
+				bottomMainHeaderElement.pickColor.classList.add('animate__zoomIn');
+				bottomMainHeaderElement.pickColor.classList.remove('animate__zoomOut');
+			}
 		});
 	});
 

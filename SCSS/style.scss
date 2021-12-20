@@ -74,7 +74,6 @@ body {
 	}
 }
 .pick-color {
-	transition: all 0.6s ease 0s;
 	height: auto;
 	.circleItem {
 		cursor: pointer;
@@ -157,21 +156,6 @@ body {
 		height: 30px;
 		border: 2px solid #b5b8b1;
 		margin: 0px 20px 0px 0px;
-	}
-}
-.pick-color.isHidden {
-	height: 0px;
-	.circleItem {
-		height: 0px;
-		font-size: 0px;
-	}
-	.red::before,
-	.yellow::before,
-	.green::before,
-	.blue::before,
-	.purple::before {
-		width: 0px;
-		height: 0px;
 	}
 }
 .pickColor-list {
