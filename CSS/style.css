@@ -349,6 +349,22 @@ body {
   font-size: 40px;
 }
 
+.header-title::-webkit-input-placeholder {
+  color: white;
+}
+
+.header-title:-ms-input-placeholder {
+  color: white;
+}
+
+.header-title::-ms-input-placeholder {
+  color: white;
+}
+
+.header-title::placeholder {
+  color: white;
+}
+
 .delete-list {
   cursor: pointer;
   padding: 10px 0px 0px 0px;
@@ -472,11 +488,43 @@ body {
   color: #a6e3e9;
 }
 
+.blue-text-color-bg::-webkit-input-placeholder {
+  color: #a6e3e9;
+}
+
+.blue-text-color-bg:-ms-input-placeholder {
+  color: #a6e3e9;
+}
+
+.blue-text-color-bg::-ms-input-placeholder {
+  color: #a6e3e9;
+}
+
+.blue-text-color-bg::placeholder {
+  color: #a6e3e9;
+}
+
 .green-htb-bg {
   background: #a8e6cf;
 }
 
 .green-text-color-bg {
+  color: #a8e6cf;
+}
+
+.green-text-color-bg::-webkit-input-placeholder {
+  color: #a8e6cf;
+}
+
+.green-text-color-bg:-ms-input-placeholder {
+  color: #a8e6cf;
+}
+
+.green-text-color-bg::-ms-input-placeholder {
+  color: #a8e6cf;
+}
+
+.green-text-color-bg::placeholder {
   color: #a8e6cf;
 }
 
@@ -488,6 +536,22 @@ body {
   color: #ffe27c;
 }
 
+.yellow-text-color-bg::-webkit-input-placeholder {
+  color: #ffe27c;
+}
+
+.yellow-text-color-bg:-ms-input-placeholder {
+  color: #ffe27c;
+}
+
+.yellow-text-color-bg::-ms-input-placeholder {
+  color: #ffe27c;
+}
+
+.yellow-text-color-bg::placeholder {
+  color: #ffe27c;
+}
+
 .red-htb-bg {
   background: #ffb6b9;
 }
@@ -496,10 +560,42 @@ body {
   color: #ffb6b9;
 }
 
+.red-text-color-bg::-webkit-input-placeholder {
+  color: #ffb6b9;
+}
+
+.red-text-color-bg:-ms-input-placeholder {
+  color: #ffb6b9;
+}
+
+.red-text-color-bg::-ms-input-placeholder {
+  color: #ffb6b9;
+}
+
+.red-text-color-bg::placeholder {
+  color: #ffb6b9;
+}
+
 .purple-htb-bg {
   background: #d2c3f2;
 }
 
 .purple-text-color-bg {
+  color: #d2c3f2;
+}
+
+.purple-text-color-bg::-webkit-input-placeholder {
+  color: #d2c3f2;
+}
+
+.purple-text-color-bg:-ms-input-placeholder {
+  color: #d2c3f2;
+}
+
+.purple-text-color-bg::-ms-input-placeholder {
+  color: #d2c3f2;
+}
+
+.purple-text-color-bg::placeholder {
   color: #d2c3f2;
 }

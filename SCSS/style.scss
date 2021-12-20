@@ -234,6 +234,9 @@ body {
 	text-align: center;
 	color: white;
 	font-size: 40px;
+	&::placeholder {
+		color: white;
+	}
 }
 .delete-list {
 	cursor: pointer;
@@ -333,6 +336,9 @@ body {
 }
 .blue-text-color-bg {
 	color: #a6e3e9;
+	&::placeholder {
+		color: #a6e3e9;
+	}
 }
 //-------------------------------------
 .green-htb-bg {
@@ -340,6 +346,9 @@ body {
 }
 .green-text-color-bg {
 	color: #a8e6cf;
+	&::placeholder {
+		color: #a8e6cf;
+	}
 }
 //-------------------------------------
 .yellow-htb-bg {
@@ -347,6 +356,9 @@ body {
 }
 .yellow-text-color-bg {
 	color: #ffe27c;
+	&::placeholder {
+		color: #ffe27c;
+	}
 }
 //-------------------------------------
 .red-htb-bg {
@@ -354,6 +366,9 @@ body {
 }
 .red-text-color-bg {
 	color: #ffb6b9;
+	&::placeholder {
+		color: #ffb6b9;
+	}
 }
 //-------------------------------------
 .purple-htb-bg {
@@ -361,5 +376,8 @@ body {
 }
 .purple-text-color-bg {
 	color: #d2c3f2;
+	&::placeholder {
+		color: #d2c3f2;
+	}
 }
 //-------------------------------------
